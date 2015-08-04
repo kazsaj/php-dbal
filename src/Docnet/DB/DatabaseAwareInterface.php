@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2014 Docnet
+ * Copyright 2015 Docnet
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Docnet\DB;
 
+use Docnet\DB;
+
 /**
- * Model
+ * Interface DatabaseAwareInterface
  *
- * @author Tom Walder <tom@docnet.nu>
+ * @author Kamba Abudu <kabudu@docnet.nu>
+ * @package Docnet\DB
  */
-class Model {
+interface DatabaseAwareInterface
+{
+    /**
+     * Set a DB Instance
+     *
+     * @param DB $obj_db
+     * @return mixed
+     */
+    public function setDb(DB $obj_db);
 
-    public function hello()
-    {
-        echo "World!";
-    }
-
+    /**
+     * Set a LazyDB instance
+     *
+     * @param LazyDB $obj_lazy_db
+     * @return mixed
+     */
+    public function setLazyDb(LazyDB $obj_lazy_db);
 }
+

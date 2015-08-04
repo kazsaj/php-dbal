@@ -2,13 +2,20 @@
 
 Designed to wrap mysqli into a series of fast, secure and easy to use classes.
 
+## Install with Composer ##
+
+Require line as follows
+
+`"docnet/php-dbal": "v2.0"`
+
 ## Let's Connect ##
 
 You're gonna need to connect to a DB before you can do anything else...
 
 ```php
 <?php
-$db = new \Docnet\DB('127.0.0.1', 'root', 'password', 'dbname');
+$settings = new \Docnet\DB\ConnectionSettings('127.0.0.1', 'root', 'password', 'dbname');
+$db = new \Docnet\DB($settings);
 ```
 
 For the following examples, we'll assume there's an active DB object.
